@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import { useState, useEffect } from 'react';
+import Record from './components/record'
 import './App.css';
 
 function App() {
@@ -23,6 +24,10 @@ function submitNewNote () {
     }
 }
 
+let deleteNote =() => {
+  console.log(useState)
+}
+
 useEffect(()=> {
 // return (data)
 })
@@ -32,9 +37,7 @@ useEffect(()=> {
       <input id="takeThis" placeholder="enter note" ></input>
       <button onClick={submitNewNote}>Add Note</button>
       {/* <Notes data={data} /> */}
-      {data.map(data => {
-        return <h3>{JSON.stringify(data)}</h3>
-      })}
+      <Record users={data}/>
     </div>
   );
 }
